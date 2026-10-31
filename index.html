@@ -501,6 +501,41 @@
       <div class="project-item">
         <div>
           <p class="project-num">001</p>
+          <h3 class="project-title">Indian Railways Arrival Delay Prediction</h3>
+          <p class="project-desc">
+            An end-to-end machine learning pipeline on one month of real Indian Railways running data (1.28M
+            stop-level records, 3,892 trains, 4,736 stations) that predicts, at any stop, how late a train will
+            reach its final destination. Data checks exposed that the source reports missing arrivals as "on time":
+            after a stop 2+ hours late, an exact 0 was about 50× more common than a real recovery of that size, so
+            47,603 fake zeros (3.7%) were flagged and treated as missing. Evaluation uses a date-based split and
+            leakage-safe, out-of-fold history features. Predicting the correction to a historical baseline, rather
+            than the delay itself, was the biggest gain, beating tuning and a neural network. On unseen dates the
+            final model reaches an MAE of 15.5 minutes, 38% better than persistence and 19% better than the history
+            rule, with 75.7% of predictions within ±10 minutes.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python3</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Gradient Boosting</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Seaborn</span>
+            <span class="tag">Jupyter</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/BitanuCS/indian-rail-delay" target="_blank" class="project-link">GitHub</a>
+          </div>
+        </div>
+        <div class="project-meta">
+          <a href="https://github.com/BitanuCS/indian-rail-delay" target="_blank" class="project-arrow">↗</a>
+          <span class="project-year">2026</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <p class="project-num">002</p>
           <h3 class="project-title">RAG-Based Regulatory Compliance Chatbot</h3>
           <p class="project-desc">
             A retrieval-augmented assistant over 27 regulatory documents covering 25 Indian and international
@@ -537,7 +572,7 @@
 
       <div class="project-item">
         <div>
-          <p class="project-num">002</p>
+          <p class="project-num">003</p>
           <h3 class="project-title">AI-Powered Job Hunt Assistant</h3>
           <p class="project-desc">
             An AI tool that reads a resume, infers the roles that actually fit, and searches across 8 job boards to
@@ -567,7 +602,7 @@
 
       <div class="project-item">
         <div>
-          <p class="project-num">003</p>
+          <p class="project-num">004</p>
           <h3 class="project-title">CNN-based Steganalysis Using Modified-AlexNet</h3>
           <p class="project-desc">
             A modified AlexNet CNN for image steganalysis, adapting the architecture to classify images as cover
@@ -591,7 +626,7 @@
 
       <div class="project-item">
         <div>
-          <p class="project-num">004</p>
+          <p class="project-num">005</p>
           <h3 class="project-title">Signature-Based Steganalysis and Feature-Augmented Password Cracking for SteganographX Plus</h3>
           <p class="project-desc">
             A signature-based steganalysis engine written in C that detects BMP images tampered by SteganographX Plus
@@ -619,7 +654,7 @@
 
       <div class="project-item">
         <div>
-          <p class="project-num">005</p>
+          <p class="project-num">006</p>
           <h3 class="project-title">Real-time Object Detection using OpenCV and YOLOv3</h3>
           <p class="project-desc">
             A real-time vehicle detection system in Python using OpenCV to identify and classify vehicle types from
