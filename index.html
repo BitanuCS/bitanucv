@@ -540,20 +540,24 @@
           <p class="project-desc">
             A retrieval-augmented assistant over 27 regulatory documents covering 25 Indian and international
             frameworks (RBI, SEBI, IRDAI, PMLA, DPDP Act, IT Act, GDPR, ISO 27001), where every claim carries a
-            framework, section, and page citation traceable back to the source PDF. Grounding is enforced with a
-            cosine-distance floor, per-section diversification, and a citation range check, so out-of-corpus
-            questions are refused outright at zero LLM cost instead of being answered from model memory.
-            A confidently wrong answer traced to the ingest layer — not the prompt — led to restoring lost section
-            boundaries, reflowing column-flattened tables, and re-splitting the 48.8% of chunks that were silently
-            exceeding the embedder's 512-token limit. Retrieval is measured by a 30-case harness needing no model
-            calls: MRR 0.819, Hit@6 of 92%, and 4/4 correct refusals.
+            framework, section, and page citation traceable back to the source PDF. A confidently wrong answer
+            traced to the ingest layer, not the prompt, led to owning the whole PDF-to-index pipeline: gazette
+            schedules get their own sections, unruled tables are rebuilt row by row, and documents are split at
+            their own clause numbering into 6,533 clauses, so each chunk is one citable obligation. Retrieval runs
+            Cohere embeddings, a cosine-distance floor, Cohere reranking, and small-to-big expansion that widens
+            each matched clause with its neighbours so the model reads a rule with its provisos. Out-of-corpus
+            questions are refused at zero LLM cost instead of being answered from model memory. A 30-case harness
+            needing no model calls measures Hit@1 of 96%, MRR 0.962, and 4/4 correct refusals.
           </p>
           <div class="project-tags">
             <span class="tag">Python3</span>
             <span class="tag">LangChain</span>
             <span class="tag">ChromaDB</span>
-            <span class="tag">BGE Embeddings</span>
-            <span class="tag">Sentence-Transformers</span>
+            <span class="tag">Cohere Embed &amp; Rerank</span>
+            <span class="tag">HuggingFace</span>
+            <span class="tag">PyMuPDF</span>
+            <span class="tag">Tesseract OCR</span>
+            <span class="tag">Langfuse</span>
             <span class="tag">LangSmith</span>
             <span class="tag">Streamlit</span>
             <span class="tag">SQLite</span>
